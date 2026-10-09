@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Subtle health vitality pulse */
+  @keyframes vitality-pulse {
+    0%, 100% {
+      opacity: 0.95;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.75;
+      transform: scale(1.03);
+    }
+  }
+
+  /* Slow living environmental water / pulse flow */
+  @keyframes wave-float {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-8px) rotate(1deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+
+  /* Gentle drifting vitality particles */
+  @keyframes drift-particle {
+    0% {
+      transform: translate(0, 0);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translate(15px, -20px);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(0, 0);
+      opacity: 0.2;
+    }
+  }
+
+  .animate-vitality {
+    animation: vitality-pulse 4s ease-in-out infinite;
+  }
+
+  .animate-wave {
+    animation: wave-float 8s ease-in-out infinite;
+  }
+
+  .animate-drift-slow {
+    animation: drift-particle 12s ease-in-out infinite;
+  }
+
+  /* Continuous ECG Heartbeat Wave Movement */
+  @keyframes ecg-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes ecg-scroll-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-ecg-scroll {
+    animation: ecg-scroll 24s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-ecg-scroll-reverse {
+    animation: ecg-scroll-reverse 34s linear infinite;
+    will-change: transform;
+  }
+
+  /* 3D Depth Card Utility */
+  .card-spatial {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-spatial:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Respect user reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-vitality,
+    .animate-wave,
+    .animate-drift-slow,
+    .animate-ecg-scroll,
+    .animate-ecg-scroll-reverse,
+    .card-spatial {
+      animation: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+}

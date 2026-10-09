@@ -1,0 +1,6 @@
+{
+  "name": "PHELO — Botswana Digital Health Platform",
+  "description": "Botswana-focused digital health platform connecting Person, Community, Healthcare, and Public Health. Triage and care routing, verified facility directory, emergency access, and syndromic surveillance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
